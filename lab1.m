@@ -1,5 +1,8 @@
-clear
+clf(figure(1))
+clf(figure(2))
 
+uA = [5; 10];
+uB = [10; 15];
 
 Class_A = data(200, [5; 10], [8, 0; 0, 4]);
 Class_B = data(200, [10; 15], [8, 0; 0, 4]);
@@ -19,6 +22,8 @@ scatter(Class_A(1, :), Class_A(2, :),'x', 'red');
 plot(Cont_A(1, :), Cont_A(2, :), 'red', 'LineWidth', 2);
 scatter(Class_B(1, :), Class_B(2, :), 'x', 'blue');
 plot(Cont_B(1, :), Cont_B(2, :), 'blue', 'LineWidth', 2);
+scatter(uA(1), uA(2), 'o', 'green');
+scatter(uB(1), uB(2), 'o', 'green');
 hold off
 
 figure(2)
@@ -45,14 +50,25 @@ function contour = std_cont(u, cov)
     contour = bsxfun(@plus, centered_contour, u);
 end
 
-%%MED
 
+%MED
+function x = MED(x1, x2)
+    %Use like x = MED(8, 13)
+    uA = [5; 10];
+	uB = [10; 15];
+    
+    d1 = norm([x1;x2]-uA);
+    d2 = norm([x1;x2]-uB);
+    disp(d1)
+    disp(d2)
+    if d1 < d2
+        x = 1;
+    else
+        x = 2;
+    end
+end
 
-%%MED
-
-
-
-%%GED
+%GED
 
 
 %%GED
