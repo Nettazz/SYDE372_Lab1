@@ -45,3 +45,30 @@ function contour = std_cont(u, cov)
     contour = bsxfun(@plus, centered_contour, u);
 end
 
+%%MED
+
+
+%%MED
+
+
+
+%%GED
+
+
+%%GED
+
+
+
+%%MAP
+
+
+%%MAP
+
+
+
+%%KNN
+
+
+%KNN
+
+
